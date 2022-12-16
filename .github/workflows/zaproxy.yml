@@ -2,7 +2,7 @@ name: ZAP-Scan
 run-name: Let's Go 🚀
 on: [push]
 jobs:
-  Zap Scan:
+  Zap-Scan:
     runs-on: ubuntu-latest
     name: Scan the webapplication
     steps:
