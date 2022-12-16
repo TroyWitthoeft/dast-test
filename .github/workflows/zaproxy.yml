@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: ZAP Scan
+run-name: Let's Go 🚀
 on: [push]
 jobs:
   Zap Scan:
