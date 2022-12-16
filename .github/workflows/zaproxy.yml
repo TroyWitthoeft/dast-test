@@ -1,4 +1,4 @@
-name: ZAP Scan
+name: ZAP-Scan
 run-name: Let's Go 🚀
 on: [push]
 jobs:
