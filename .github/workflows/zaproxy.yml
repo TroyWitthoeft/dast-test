@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Zap Scan:
+    runs-on: ubuntu-latest
+    name: Scan the webapplication
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'https://glsauto.com'
+          
