@@ -1,23 +1,24 @@
-name: ZAP-Scan
+name: OWASP ZAP Baseline Scan     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
 run-name: Let's Go 🚀
 on: 
-  workflow_dispatch:
+  workflow_dispatch:              # Enables manual run option
   schedule:
-  - cron:  '0 4 * * 0'  # Sunday at 4AM
-
-
+  - cron:  '0 4 * * 0'            # Sunday at 4AM
 
 jobs:
   Zap-Scan:
     runs-on: ubuntu-latest
-    name: Scan the web apps
+    name: Scan web apps
     steps:
-      - name: ZAP-Scan 1
+      - name: scan beta.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://beta.glsauto.com'
-      - name: ZAP-Scan 2
+          rules_file_name: '.zap/beta.glsauto.com_zaproxy_rules.tsv'
+
+      - name: scan stg.fuel.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://stg.glsauto.com'
+          target: 'https://stg.fuel.glsauto.com/'
+          rules_file_name: '.zap/stg.fuel.glsauto.com_zaproxy_rules.tsv'
 
