@@ -1,5 +1,5 @@
-name: Security Scan - DASTardly   # More info = https://portswigger.net/burp/dastardly/scan-checks
-run-name: 🦹‍♂️ Dastardly Burp Suite Scan ${{ github.run_number }}
+name: Security Scan - DASTardly 🦹‍♂️    # More info = https://portswigger.net/burp/dastardly/scan-checks
+run-name: Dastardly Burp Suite Scan /#${{ github.run_number }}
 on: 
   workflow_dispatch:              # Enables manual run option
   schedule:

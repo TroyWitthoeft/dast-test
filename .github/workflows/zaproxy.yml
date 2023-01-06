@@ -1,5 +1,5 @@
-name: Security Scan - ZAP     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
-run-name: ⚡ OWASP Zed Attack Proxy ${{ github.run_number }}
+name: Security Scan - OWASP ZAP ⚡     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
+run-name: Zapoxy Scan /#${{ github.run_number }}
 on: 
   workflow_dispatch:              # Enables manual run option
   schedule:
@@ -7,17 +7,17 @@ on:
 
 jobs:
   Job1:
+    env: 
+      website_name: beta.glsauto.com
+      target_url: https://beta.glsauto.com   
     runs-on: ubuntu-latest
-    name: Scan web app
-    steps:
-      - env: 
-          website_name: beta.glsauto.com
-          target_url: https://beta.glsauto.com    
-        name: scan ${{ env.target_url }}
+    name: Scan ${{ env.website_name }}
+    steps: 
+      - name: scan ${{ env.website_name }}
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: '${{ env.target_url }}'
-          rules_file_name: '.zap/beta.${{ env.websitename }}_rules.tsv'
+          rules_file_name: '.zap/beta.${{ env.website_name }}_rules.tsv'  # make sure file has this naming convention
 
   Job2:
     runs-on: ubuntu-latest
