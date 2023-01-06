@@ -1,8 +1,11 @@
 name: ZAP-Scan
 run-name: Let's Go 🚀
 on: 
+  workflow_dispatch:
   schedule:
   - cron:  '0 4 * * 0'  # Sunday at 4AM
+
+
 
 jobs:
   Zap-Scan:
