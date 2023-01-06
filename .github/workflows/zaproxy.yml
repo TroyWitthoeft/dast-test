@@ -2,7 +2,7 @@ name: ZAP-Scan
 run-name: Let's Go 🚀
 on: 
   schedule:
-  - cron:  '0 0 * * 6'
+  - cron:  '0 4 * * 0'  # Sunday at 4AM
 
 jobs:
   Zap-Scan:
