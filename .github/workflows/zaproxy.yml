@@ -11,13 +11,13 @@ jobs:
       website_name: beta.glsauto.com
       target_url: https://beta.glsauto.com   
     runs-on: ubuntu-latest
-    name: Scan ${{ env.website_name }}
+    name: Scan ${{ website_name }}
     steps: 
-      - name: scan ${{ env.website_name }}
+      - name: scan ${{ website_name }}
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: '${{ env.target_url }}'
-          rules_file_name: '.zap/beta.${{ env.website_name }}_rules.tsv'  # make sure file has this naming convention
+          target: '${{ target_url }}'
+          rules_file_name: '.zap/beta.${{ website_name }}_rules.tsv'  # make sure file has this naming convention
 
   Job2:
     runs-on: ubuntu-latest
