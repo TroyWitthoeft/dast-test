@@ -5,41 +5,35 @@ on:
   schedule:
   - cron:  '0 4 * * 0'            # Sunday at 4AM
 
-env:
-  website-1: beta.glsauto.com
-  website-2: stg.fuel.glsauto.com
-  website-3: stg-cat.app.glsauto.com
-
 jobs:
-  website-1:
+  Job1:
     runs-on: ubuntu-latest
-    name: 'scan $website-1'
+    name: Scan beta.glsauto.com
     steps:
-      - name: 'scan $website-1'
+      - name: scan beta.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://${{ website-1 }}'
-          rules_file_name: '.zap/beta.${{ website-1 }}_rules.tsv'
+          target: 'https://beta.glsauto.com'
+          rules_file_name: '.zap/beta.glsauto.com.zaproxy.rules.tsv'
 
   Job2:
     runs-on: ubuntu-latest
-    name: Scan web app
+    name: Scan stg.fuel.glsauto.com
     steps:
       - name: scan stg.fuel.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://stg.fuel.glsauto.com/'
-          rules_file_name: '.zap/stg.fuel.glsauto.com_zaproxy_rules.tsv'
+          rules_file_name: '.zap/stg.fuel.glsauto.com.zaproxy.rules.tsv'
 
   Job3:
     runs-on: ubuntu-latest
-    name: Scan web app
+    name: Scan stg-cat.app.glsauto.com
     steps:
-      - name: scan stg.fuel.glsauto.com
+      - name: scan stg-cat.app.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://stg-cat.app.glsauto.com/'
-
   
 
 
