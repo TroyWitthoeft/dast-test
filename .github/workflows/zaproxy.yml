@@ -13,4 +13,8 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://beta.glsauto.com'
+      - name: ZAP-Scan 2
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'https://stg.glsauto.com'
 
