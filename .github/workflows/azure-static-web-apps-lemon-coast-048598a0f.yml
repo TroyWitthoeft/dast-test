@@ -10,11 +10,6 @@ on:
       - main
 
 jobs:
-  dastardly_job:
-    name: Run Dastardly Action Step
-    uses: PortSwigger/dastardly-github-action@main
-    with:
-      target-url: 'https://ginandjuice.shop'
 
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
