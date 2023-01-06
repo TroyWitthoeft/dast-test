@@ -1,5 +1,5 @@
 name: Security Scan - ZAP     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
-run-name: ⚡ OWASP Zed Attack Proxy 
+run-name: ⚡ OWASP Zed Attack Proxy ${{ github.run_number }}
 on: 
   workflow_dispatch:              # Enables manual run option
   schedule:
@@ -10,11 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     name: Scan web apps
     steps:
-      - name: scan beta.glsauto.com
+      - env: 
+          target_url: https://beta.glsauto.com    
+        name: scan ${{ env.target_url }}
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://beta.glsauto.com'
+          target: '${{ env.target_url }}'
           rules_file_name: '.zap/beta.glsauto.com_zaproxy_rules.tsv'
+
+      - name: scan stg.fuel.glsauto.com
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'https://stg.fuel.glsauto.com/'
+          rules_file_name: '.zap/stg.fuel.glsauto.com_zaproxy_rules.tsv'
 
       - name: scan stg.fuel.glsauto.com
         uses: zaproxy/action-baseline@v0.7.0
