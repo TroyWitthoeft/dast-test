@@ -1,12 +1,18 @@
 name: ZAP-Scan
 run-name: Let's Go 🚀
-on: [push]
+on: 
+  schedule:
+  - cron:  '0 4 * * 7'
 jobs:
   Zap-Scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
+    name: Scan the web apps
     steps:
-      - name: ZAP-Scan
+      - name: ZAP-Scan 1
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://glsauto.com'
+          target: 'https://beta.glsauto.com'
+      - name: ZAP-Scan 2
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'https://stg.glsauto.com'
