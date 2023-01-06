@@ -1,5 +1,5 @@
-name: OWASP ZAP Baseline Scan     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
-run-name: Let's Go 🚀
+name: Security Scan     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
+run-name: ⚡ OWASP Zed Attack Proxy 
 on: 
   workflow_dispatch:              # Enables manual run option
   schedule:
