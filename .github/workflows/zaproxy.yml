@@ -2,7 +2,7 @@ name: ZAP-Scan
 run-name: Let's Go 🚀
 on: 
   schedule:
-  - cron:  '0 4 * * 7'
+  - cron:  '0 0 * * 7'
 jobs:
   Zap-Scan:
     runs-on: ubuntu-latest
