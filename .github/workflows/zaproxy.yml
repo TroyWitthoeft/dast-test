@@ -11,7 +11,7 @@ jobs:
       website_name: beta.glsauto.com
       target_url: https://beta.glsauto.com   
     runs-on: ubuntu-latest
-    name: Scan ${{ website_name }}
+    name: Scan ${{ env.website_name }}
     steps: 
       - name: scan ${{ website_name }}
         uses: zaproxy/action-baseline@v0.7.0
