@@ -1,5 +1,5 @@
 name: Security Scan - OWASP ZAP ⚡     # More info = https://www.zaproxy.org/docs/docker/baseline-scan/
-run-name: Zapoxy Scan /#${{ github.run_number }}
+run-name: 'Zapoxy Scan #${{ github.run_number }}'
 on: 
   workflow_dispatch:              # Enables manual run option
   schedule:
